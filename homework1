@@ -1,1 +1,256 @@
+<!DOCTYPE html>
+<!--
+Program name: patient-form.html
+Author: Zuhair Asif
+Date created: 02/24/2026
+Date last edited: 02/24/2026
+Version: 1.0
+Description: Patient Registration Form for MIS3371 Homework 1
+-->
 
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>We'R'Docs Medical - Patient Registration</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ===== BANNER ===== -->
+<div id="banner">
+    <img src="logo.png" alt="We'R'Docs Logo" width="70">
+
+    <div>
+        <h1>We'R'Docs Medical Center</h1>
+        <p>Your Health, Our Priority</p>
+    </div>
+
+    <div id="date-display">
+        <script>
+            var today = new Date();
+            document.write("Today is: " + today.toDateString());
+        </script>
+    </div>
+</div>
+<!-- end banner -->
+
+
+<!-- ===== MAIN CONTENT ===== -->
+<div id="main">
+
+    <h2>New Patient Registration Form</h2>
+    <p>Please fill out all fields. Fields marked with * are required.</p>
+    <br>
+
+    <form action="thankyou.html">
+
+        <!-- ===== PERSONAL INFORMATION ===== -->
+        <h3>Personal Information</h3>
+        <table>
+            <tr>
+                <td>First Name *</td>
+                <td><input type="text" id="fname" name="fname" maxlength="30" size="22" required></td>
+
+                <td>M.I.</td>
+                <td><input type="text" id="mi" name="mi" maxlength="1" size="3"></td>
+
+                <td>Last Name *</td>
+                <td><input type="text" id="lname" name="lname" maxlength="30" size="22" required></td>
+            </tr>
+
+            <tr>
+                <td>Date of Birth (MM/DD/YYYY) *</td>
+                <td><input type="text" id="dob" name="dob" maxlength="10" size="12" required placeholder="MM/DD/YYYY"></td>
+
+                <td>Social Security #</td>
+                <td colspan="3"><input type="password" id="ssn" name="ssn" maxlength="11" size="14" placeholder="XXX-XX-XXXX"></td>
+            </tr>
+
+            <tr>
+                <td>Email Address *</td>
+                <td colspan="5"><input type="email" id="email" name="email" size="35" required></td>
+            </tr>
+
+            <tr>
+                <td>Phone Number</td>
+                <td colspan="5"><input type="tel" id="phone" name="phone" maxlength="14" size="16" placeholder="(713) 555-1234"></td>
+            </tr>
+        </table>
+
+        <br>
+
+        <!-- ===== ADDRESS ===== -->
+        <h3>Address</h3>
+        <table>
+            <tr>
+                <td>Address Line 1 *</td>
+                <td colspan="5"><input type="text" id="addr1" name="addr1" maxlength="30" size="40" required></td>
+            </tr>
+
+            <tr>
+                <td>Address Line 2</td>
+                <td colspan="5"><input type="text" id="addr2" name="addr2" maxlength="30" size="40"></td>
+            </tr>
+
+            <tr>
+                <td>City *</td>
+                <td><input type="text" id="city" name="city" maxlength="30" size="20" required></td>
+
+                <td>State *</td>
+                <td>
+                    <select id="state" name="state" required>
+                        <option value="">-- Select --</option>
+                        <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+                        <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+                        <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+                        <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+                        <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+                        <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+                        <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+                        <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+                        <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+                        <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+                        <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+                        <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+                        <option>WI</option><option>WY</option><option>DC</option><option>PR</option>
+                    </select>
+                </td>
+
+                <td>Zip Code *</td>
+                <td><input type="text" id="zip" name="zip" maxlength="10" size="10" required></td>
+            </tr>
+        </table>
+
+        <br>
+
+        <!-- ===== ACCOUNT INFORMATION ===== -->
+        <h3>Account Information</h3>
+        <table>
+            <tr>
+                <td>Desired User ID *</td>
+                <td><input type="text" id="userid" name="userid" maxlength="20" size="22" required></td>
+            </tr>
+
+            <tr>
+                <td>Password *</td>
+                <td><input type="password" id="pwd" name="pwd" size="22" required></td>
+            </tr>
+
+            <tr>
+                <td>Re-enter Password *</td>
+                <td><input type="password" id="pwd2" name="pwd2" size="22" required></td>
+            </tr>
+        </table>
+
+        <br>
+
+        <!-- ===== CHECKBOXES ===== -->
+        <h3>Have you had any of the following? (Check all that apply)</h3>
+        <table>
+            <tr>
+                <td><input type="checkbox" id="chk1" name="illnesses" value="Chicken Pox"> <label for="chk1">Chicken Pox</label></td>
+                <td><input type="checkbox" id="chk2" name="illnesses" value="Measles"> <label for="chk2">Measles</label></td>
+                <td><input type="checkbox" id="chk3" name="illnesses" value="Covid-19"> <label for="chk3">Covid-19</label></td>
+                <td><input type="checkbox" id="chk4" name="illnesses" value="Small Pox"> <label for="chk4">Small Pox</label></td>
+                <td><input type="checkbox" id="chk5" name="illnesses" value="Tetanus"> <label for="chk5">Tetanus</label></td>
+            </tr>
+        </table>
+
+        <br>
+
+        <!-- ===== RADIO BUTTONS ===== -->
+        <h3>Health Questions</h3>
+        <table>
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <input type="radio" id="male" name="gender" value="Male"> <label for="male">Male</label>
+                    &nbsp;
+                    <input type="radio" id="female" name="gender" value="Female"> <label for="female">Female</label>
+                    &nbsp;
+                    <input type="radio" id="other" name="gender" value="Other"> <label for="other">Other</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Have you been vaccinated?</td>
+                <td>
+                    <input type="radio" id="vax_y" name="vaccinated" value="Yes"> <label for="vax_y">Yes</label>
+                    &nbsp;
+                    <input type="radio" id="vax_n" name="vaccinated" value="No"> <label for="vax_n">No</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Do you have health insurance?</td>
+                <td>
+                    <input type="radio" id="ins_y" name="insurance" value="Yes"> <label for="ins_y">Yes</label>
+                    &nbsp;
+                    <input type="radio" id="ins_n" name="insurance" value="No"> <label for="ins_n">No</label>
+                </td>
+            </tr>
+        </table>
+
+        <br>
+
+        <!-- ===== SLIDE BAR ===== -->
+        <h3>On a scale of 1 to 10, how would you rate your health today?</h3>
+        <table>
+            <tr>
+                <td>1 (Poor)</td>
+                <td>
+                    <input type="range" id="health" name="health" min="1" max="10" value="5">
+                </td>
+                <td>10 (Excellent)</td>
+            </tr>
+        </table>
+
+        <br>
+
+        <!-- ===== TEXT AREA ===== -->
+        <h3>Current Symptoms / Reason for Visit</h3>
+        <table>
+            <tr>
+                <td>
+                    <label for="symptoms">Please describe your current symptoms:</label><br>
+                    <textarea id="symptoms" name="symptoms" rows="4" cols="50"></textarea>
+                </td>
+            </tr>
+        </table>
+
+        <br>
+
+        <!-- ===== BUTTONS ===== -->
+        <table>
+            <tr>
+                <td>
+                    <input type="reset" value="CLEAR AND START OVER">
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="submit" value="Submit Registration">
+                </td>
+            </tr>
+        </table>
+
+    </form>
+    <!-- end form -->
+
+</div>
+<!-- end main -->
+
+
+<!-- ===== FOOTER ===== -->
+<div id="footer">
+    <p><strong>We'R'Docs Medical Center</strong> &nbsp;|&nbsp; PO Box 18881, Sugar Land, TX 77496</p>
+    <button onclick="alert('Contact us at: info@werdocs.com')">Contact Us</button>
+    <p>&copy; 2026 We'R'Docs Medical Center. All rights reserved.</p>
+</div>
+<!-- end footer -->
+
+
+
+
+</body>
+</html>
+<!-- end of patient-form.html -->
