@@ -8,35 +8,89 @@ Description: Stylesheet for MIS3371 Homework 1 - Patient Registration Form
 */
 
 /* tag selectors */
-body { font-family: Arial, sans-serif; background-color: #d6eaf8; color: #333333; }
-h1 { color: #ffffff; font-family: Georgia, serif; font-size: 1.8rem; margin: 0; }
-h2 { color: #1a3c5e; font-family: Georgia, serif; }
-h3 { color: #1a5276; font-family: Georgia, serif; margin-top: 0; }
-
-a { color: #2980b9; }
-a:visited { color: #1a5276; }
-
-table { border-collapse: collapse; margin-bottom: 15px; }
-td { padding: 6px 10px; vertical-align: middle; }
-textarea { font-family: Arial, sans-serif; font-size: 0.9rem; }
-
-input, select, textarea { padding: 4px; margin-top: 4px; }
+body {
+    background-color: lightblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    margin: 0;
+}
+h2 {
+    color: #1a3c5e;
+}
+h3 {
+    color: #1a5276;
+}
+table {
+    border-collapse: collapse;
+}
+td {
+    padding: 6px;
+    vertical-align: top;
+}
+input, select, textarea {
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 /* id selectors */
-#banner { background-color: #1a3c5e; color: #ffffff; padding: 15px 25px; text-align: center; justify-content: space-between; }
-#date-display { color: #aed6f1; font-size: 0.9rem; text-align: right; }
-#main { max-width: 900px; margin: 25px auto; background-color: #ffffff; padding: 25px 35px; border: 1px solid #aab7b8; }
-#footer { background-color: #1a3c5e; color: #aed6f1; padding: 15px 30px; font-size: 0.9rem; margin-top: 20px; text-align: center; }
-#footer a { color: #aed6f1; }
-#footer a:visited { color: #85c1e9; }
-#footer button { background-color: #2980b9; color: white; border: none; padding: 7px 16px; cursor: pointer; font-size: 0.9rem; }
+#banner {
+    background-color: #1a3c5e;
+    padding: 15px;
+}
+#date-display {
+    color: #d6eaf8;
+    font-size: 14px;
+    text-align: right;
+    width: 100%;
+}
+#main {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid gray;
+}
+#footer {
+    background-color: #1a3c5e;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-top: 20px;
+}
+#footer button {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 7px 16px;
+    cursor: pointer;
+}
 
 /* class selectors */
-.note { color: red; font-size: 0.85rem; }
-tr.form td { padding: 8px; }
+.note {
+    color: red;
+}
+tr.form td {
+    padding: 8px 12px;
+}
 
-/* button styling */
-input[type="reset"] { background-color: #808b96; color: white; padding: 8px 16px; border: none; cursor: pointer; font-size: 0.95rem; margin-right: 20px; }
-input[type="submit"] { background-color: #1a5276; color: white; padding: 8px 16px; border: none; cursor: pointer; font-size: 0.95rem; }
+/* buttons */
+input[type="submit"] {
+    background-color: #1a5276;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+input[type="reset"] {
+    background-color: gray;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
 
 /* end of style.css */
