@@ -23,8 +23,9 @@ Description: Patient Registration Form for MIS3371 Homework 1
     </div>
     <div id="date-display">
         <script>
-            var today = new Date();
-            document.write("Today is: " + today.toDateString());
+        const d = new Date();
+        let text = "Today is: " + d.toLocaleDateString();
+        document.getElementById("date-display").innerHTML = text;
         </script>
     </div>
 </div>
