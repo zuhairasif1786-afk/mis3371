@@ -1,0 +1,42 @@
+/*
+Program name: style.css
+Author: Zuhair Asif
+Date created: 02/20/2026
+Date last edited: 02/26/2026
+Version: 1.0
+Description: Stylesheet for MIS3371 Homework 1 - Patient Registration Form
+*/
+
+/* tag selectors */
+body { font-family: Arial, sans-serif; background-color: #d6eaf8; color: #333333; }
+h1 { color: #ffffff; font-family: Georgia, serif; font-size: 1.8rem; margin: 0; }
+h2 { color: #1a3c5e; font-family: Georgia, serif; }
+h3 { color: #1a5276; font-family: Georgia, serif; margin-top: 0; }
+
+a { color: #2980b9; }
+a:visited { color: #1a5276; }
+
+table { border-collapse: collapse; margin-bottom: 15px; }
+td { padding: 6px 10px; vertical-align: middle; }
+textarea { font-family: Arial, sans-serif; font-size: 0.9rem; }
+
+input, select, textarea { padding: 4px; margin-top: 4px; }
+
+/* id selectors */
+#banner { background-color: #1a3c5e; color: #ffffff; padding: 15px 25px; text-align: center; justify-content: space-between; }
+#date-display { color: #aed6f1; font-size: 0.9rem; text-align: right; }
+#main { max-width: 900px; margin: 25px auto; background-color: #ffffff; padding: 25px 35px; border: 1px solid #aab7b8; }
+#footer { background-color: #1a3c5e; color: #aed6f1; padding: 15px 30px; font-size: 0.9rem; margin-top: 20px; text-align: center; }
+#footer a { color: #aed6f1; }
+#footer a:visited { color: #85c1e9; }
+#footer button { background-color: #2980b9; color: white; border: none; padding: 7px 16px; cursor: pointer; font-size: 0.9rem; }
+
+/* class selectors */
+.note { color: red; font-size: 0.85rem; }
+tr.form td { padding: 8px; }
+
+/* button styling */
+input[type="reset"] { background-color: #808b96; color: white; padding: 8px 16px; border: none; cursor: pointer; font-size: 0.95rem; margin-right: 20px; }
+input[type="submit"] { background-color: #1a5276; color: white; padding: 8px 16px; border: none; cursor: pointer; font-size: 0.95rem; }
+
+/* end of style.css */
