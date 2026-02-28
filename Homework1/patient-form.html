@@ -195,38 +195,78 @@ Description: Patient Registration Form for MIS3371 Homework 1
         <!-- RADIO BUTTONS -->
         <h3>Health Questions</h3>
         <table>
-            <tr>
-                <td>Gender:</td>
-                <td>
-                    <input type="radio" id="male" name="gender" value="Male"> <label for="male">Male</label>
-                    &nbsp;
-                    <input type="radio" id="female" name="gender" value="Female"> <label for="female">Female</label>
-                    &nbsp;
-                    <input type="radio" id="other" name="gender" value="Other"> <label for="other">Other</label>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Have you been vaccinated?</td>
-                <td>
-                    <input type="radio" id="vax_y" name="vaccinated" value="Yes"> <label for="vax_y">Yes</label>
-                    &nbsp;
-                    <input type="radio" id="vax_n" name="vaccinated" value="No"> <label for="vax_n">No</label>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Do you have health insurance?</td>
-                <td>
-                    <input type="radio" id="ins_y" name="insurance" value="Yes"> <label for="ins_y">Yes</label>
-                    &nbsp;
-                    <input type="radio" id="ins_n" name="insurance" value="No"> <label for="ins_n">No</label>
-                </td>
-            </tr>
-        </table>
-
+            <tr class="form">
+    <td align="right">
+        <label for="gender">Gender</label>
+    </td>
+    <td>
+        <input type="radio" 
+                id="male" 
+                name="gender" 
+                value="Male"
+        >
+        Male
         <br>
 
+        <input type="radio" 
+                id="female" 
+                name="gender" 
+                value="Female"
+        >
+        Female
+        <br>
+
+        <input type="radio" 
+                id="other" 
+                name="gender" 
+                value="Other"
+        >
+        Other
+    </td>
+</tr>
+
+            <tr class="form">
+    <td align="right">
+        <label for="vaccinated">Have you been vaccinated?</label>
+    </td>
+    <td>
+        <input type="radio" 
+                id="vax_y" 
+                name="vaccinated" 
+                value="Yes"
+        >
+        Yes
+        <br>
+
+        <input type="radio" 
+                id="vax_n" 
+                name="vaccinated" 
+                value="No"
+        >
+        No
+    </td>
+</tr>
+        <tr class="form">
+    <td align="right">
+        <label for="insurance">Do you have health insurance?</label>
+    </td>
+    <td>
+        <input type="radio" 
+                id="ins_y" 
+                name="insurance" 
+                value="Yes"
+        >
+        Yes
+        <br>
+
+        <input type="radio" 
+                id="ins_n" 
+                name="insurance" 
+                value="No"
+        >
+        No
+    </td>
+</tr>
         <!-- SLIDE BAR -->
         <h3>On a scale of 1 to 10, how would you rate your health today?</h3>
         <table>
