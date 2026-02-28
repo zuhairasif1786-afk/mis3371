@@ -27,12 +27,6 @@ Description: Patient Registration Form for MIS3371 Homework 1
         <p>Your Health, Our Priority</p>
     </div>
 
-    <div id="date-display">
-        <script>
-            var today = new Date();
-            document.write("Today is: " + today.toDateString());
-        </script>
-    </div>
 </div>
 <!-- end banner -->
 
@@ -285,8 +279,12 @@ Description: Patient Registration Form for MIS3371 Homework 1
     <p>&copy; 2026 We'R'Docs Medical Center. All rights reserved.</p>
 </div>
 <!-- end footer -->
-
-
+<script>
+    const d = new Date();
+    let text = d.toLocaleDateString();
+    document.getElementById("today").innerHTML = text;
+    
+</script>
 
 
 </body>
