@@ -5,26 +5,24 @@ Date Created: 03/27/2026
 Description: External JavaScript for Patient Registration Form HW2
 */
 
-// error flags for each field - 1 means error, 0 means ok
+
 var error_flag = 0;
 var firstnameflag = 1;
-var middleflag = 0;      // not required
+var middleflag = 0;      
 var lastnameflag = 1;
 var password1flag = 1;
 var password2flag = 1;
 var usernameflag = 1;
 
-// runs when page loads
+
 window.addEventListener("DOMContentLoaded", function() {
 
-    // show todays date
+  
     var d = new Date();
     document.getElementById("date-display").innerHTML = "Today is: " + d.toLocaleDateString();
 
-    // set slider starting value
     document.getElementById("scale_value").innerHTML = document.getElementById("scale").value;
 
-    // set DOB min and max so future dates are blocked
     var dob = document.getElementById("dob");
     var today = new Date().toISOString().split("T")[0];
     var minDate = new Date();
@@ -32,7 +30,6 @@ window.addEventListener("DOMContentLoaded", function() {
     dob.max = today;
     dob.min = minDate.toISOString().split("T")[0];
 
-    // apply titles and patterns to all fields
     document.getElementById("Fname").title = "Enter your first name, letters only, 1-30 characters";
     document.getElementById("Fname").pattern = "[A-Za-z'\\-]{1,30}";
 
@@ -66,22 +63,22 @@ window.addEventListener("DOMContentLoaded", function() {
 
 });
 
-// update slider value as user drags it
+
 function updateScale(value) {
     document.getElementById("scale_value").innerHTML = value;
 }
 
-// check first name field
+
 function checkfirstname() {
     var x = document.getElementById("Fname").value;
-    firstnameflag = 1;  // turn on error flag
+    firstnameflag = 1;  
     if (x.length < 1) {
         document.getElementById("fname_msg").innerHTML = "First name is required";
         error_flag = 1;
     } else {
         if (x.match(/^[a-zA-Z'\-]{1,30}$/)) {
             document.getElementById("fname_msg").innerHTML = "";
-            firstnameflag = 0;  // turn off error flag
+            firstnameflag = 0;  
         } else {
             document.getElementById("fname_msg").innerHTML = "Letters only, no numbers";
             error_flag = 1;
@@ -89,7 +86,7 @@ function checkfirstname() {
     }
 }
 
-// check last name field
+// check last name 
 function checklastname() {
     var x = document.getElementById("Lname").value;
     lastnameflag = 1;
@@ -107,12 +104,12 @@ function checklastname() {
     }
 }
 
-// check username - force lowercase as they type
+
 function enforceLowercase(input) {
     input.value = input.value.toLowerCase();
 }
 
-// check password strength as user types
+// check password
 function checkPasswordStrength() {
     var passwordinput = document.getElementById("password").value;
     password1flag = 0;
@@ -151,7 +148,6 @@ function checkPasswordStrength() {
     password1flag = 0;
 }
 
-// check that both passwords match
 function checkPasswordMatch() {
     var x = document.getElementById("password").value;
     var y = document.getElementById("confirm_password").value;
@@ -170,26 +166,26 @@ function checkPasswordMatch() {
     }
 }
 
-// review button - read all fields and show them below the form
+// review
 function showReview() {
 
-    // get checked illnesses
+   
     var illnesses = [];
     var checkboxes = document.querySelectorAll('input[name="illness"]:checked');
     for (var i = 0; i < checkboxes.length; i++) {
         illnesses.push(checkboxes[i].value);
     }
 
-    // get radio button values
+
     var genderEl    = document.querySelector('input[name="gender"]:checked');
     var vaccEl      = document.querySelector('input[name="vaccinated"]:checked');
     var insuranceEl = document.querySelector('input[name="insurance"]:checked');
 
-    var gender    = genderEl    ? genderEl.value    : "Not selected";
-    var vaccinated = vaccEl     ? vaccEl.value      : "Not selected";
-    var insurance = insuranceEl ? insuranceEl.value : "Not selected";
+    var gender    = genderEl    ? genderEl.value  : "Not selected";
+    var vaccinated = vaccEl     ? vaccEl.value : "Not selected";
+    var insurance = insuranceEl ? insuranceEl.value: "Not selected";
 
-    // build the review table using string concatenation like prof does
+
     var output = "<h3 style='text-align:center'>Please Review Your Information</h3>";
     output += "<table border='1' cellpadding='8' style='width:100%'>";
     output += "<tr><th>Field</th><th>Value</th></tr>";
