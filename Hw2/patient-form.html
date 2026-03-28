@@ -31,26 +31,35 @@ Description: Patient Registration Form for MIS3371 Homework 1
                     <table>
                         <tr>
                             <td> First Name*</td>
-                            <td><input type="text" id="Fname" name="Fname" maxlength="30" size="20" required></td>
+                            <td><input type="text" id="Fname" name="Fname" maxlength="30" size="20"
+                                title="Enter your first name, 1 to 30 letters, apostrophes, or dashes only"
+                                pattern="[A-Za-z'\-]{1,30}" required></td>
 
                             <td> Middle Name</td>
-                            <td><input type="text" id="Mname" name="Mname" maxlength="1" size="2"></td>
+                            <td><input type="text" id="Mname" name="Mname" maxlength="1" size="2" title="Enter one letter for middle initial"
+                                    pattern="[A-Za-z]"></td>
 
                             <td> Last Name*</td>
-                            <td><input type="text" id="Lname" name="Lname" maxlength="30" size="20" required></td>
+                            <td><input type="text" id="Lname" name="Lname" maxlength="30" size="20" title="Enter your last name, 1 to 30 characters"
+                                    pattern="[A-Za-z0-9'\-]{1,30}" required required>
+                            </td>
                         </tr>
                     </table>
                     <table>
                         <tr>
                             <td> Date of Birth*</td>
-                            <td><input type="date" id="dob" name="dob" placeholder="MM/DD/YYYY" required></td>
+                            <td><input type="date" id="dob" name="dob" min="1906-01-01" max="2026-03-27"
+                                title="Enter your date of birth, no future dates allowed" required>
+                            </td>
 
                             <td> Email address* </td>
                             <td><input type="email" id="email" name="email" size="35" required></td>
                         </tr>
                         <tr>
                             <td> Social Security# *</td>
-                            <td><input type="password" id="ssn" name="ssn" maxlength="12" size="12" placeholder="XXX-XX-XXXX" required></td>
+                            <td><input type="password" id="ssn" name="ssn" maxlength="12" size="12" placeholder="XXX-XX-XXXX"
+                                title="Enter SSN in format XXX-XX-XXXX" pattern="\d{3}-\d{2}-\d{4}" required>
+                            </td>
 
                             <td> Phone Number </td>
                             <td><input type="text" id="phone" name="phone" maxlength="15" size="15" placeholder="218-111-2233" required></td>
@@ -65,17 +74,19 @@ Description: Patient Registration Form for MIS3371 Homework 1
                             <td><input type="text" id="address1" name="address1" maxlength="50" size="50" required></td>
 
                             <td> Address 2</td>
-                            <td><input type="text" id="address2" name="address2" maxlength="50" size="50"></td>
+                            <td><input type="text" id="address2" name="address2" maxlength="50" size="50" title="Enter address line 1, 2 to 30 characters"
+                                    pattern=".{2,30}" required>
+                            </td>
                         </tr>
                     </table>
                     <table>    
                         <tr>
                             <td> City*</td>
-                            <td><input type="text" id="city" name="city" maxlength="30" size="30" required></td>
+                            <td><input type="text" id="city" name="city" maxlength="30" size="30" title="Enter city name, 2 to 30 characters" pattern=".{2,30}" required></td>
                           
                             <td> State*</td>
                             <td><select id="state" name="state" required>
-                            <option value=""></option>
+                            <option value=""> Select State</option>
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
                             <option value="AZ">Arizona</option>
@@ -131,7 +142,10 @@ Description: Patient Registration Form for MIS3371 Homework 1
                         </tr>
                         <tr>
                             <td> Zip Code*</td> 
-                            <td><input type="text" id="zip" name="zip" maxlength="10" size="18" placeholder="XXXXX or XXXXX-XXXX" required></td> 
+                            <td><input type="text" id="zip" name="zip" maxlength="10" size="18" placeholder="XXXXX or XXXXX-XXXX" 
+                                title="Enter 5 digit zip code or zip plus 4"
+                                pattern="\d{5}(-\d{4})?" required>
+                            </td> 
                         </tr>
                     </table>
                 </div>
@@ -141,13 +155,14 @@ Description: Patient Registration Form for MIS3371 Homework 1
                     <table>
                         <tr>
                             <td> Username*</td>
-                            <td><input type="text" id="username" name="username" maxlength="20" size="20" oninput="enforceLowercase(this)" required></td>
+                            <td><input type="text" id="username" name="username" maxlength="20" size="20" title="5 to 30 characters, must start with a letter, no spaces" pattern="[A-Za-z][A-Za-z0-9_]{4,29}" oninput="enforceLowercase(this)" required></td>
 
                             <td> Password*</td>
-                            <td><input type="password" id="password" name="password" maxlength="20" size="20" oninput="checkPasswordStrength()" required> <span id="password_message"></span></td>
+                            <td><input type="password" id="password" name="password" maxlength="20" size="20" title="8 to 30 characters, must include uppercase, lowercase, number, and special character, no quotes" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#%^&*()\-_+=\/><.,`~])[A-Za-z\d!@#%^&*()\-_+=\/><.,`~]{8,30}" oninput="checkPasswordStrength()" required> 
+                            </td>
 
                             <td> Confirm Password*</td>
-                            <td><input type="password" id="confirm_password" name="confirm_password" maxlength="20" size="20" oninput="checkPasswordMatch()" required>
+                            <td><input type="password" id="confirm_password" name="confirm_password" maxlength="30" size="20" oninput="checkPasswordMatch()" required>
                             <span id="match_message" style="color:red;"></span> </td>
                         </tr>
                     </table>
@@ -232,7 +247,7 @@ Description: Patient Registration Form for MIS3371 Homework 1
                     <h3>Current Symptoms / Reason for Visit</h3>
                     <table>
                         <tr>
-                            <td><textarea id="symptoms" name="symptoms" rows="5" cols="50" placeholder="Please describe your current symptoms or reason for visit here..." required></textarea></td>
+                            <td><textarea id="symptoms" name="symptoms" rows="5" cols="50" placeholder="Please describe your current symptoms or reason for visit here..." ></textarea></td>
                         </tr>
                     </table>
 
@@ -240,7 +255,7 @@ Description: Patient Registration Form for MIS3371 Homework 1
                 <div>
                 <input type="submit" value="Submit Registration">
                 <input type="button" value="Review" onclick="showReview()">
-                <input type="reset" value="Reset Form">  
+                <input type="reset" value="Reset Form" onclick="clearReview()">   
             </div> 
             </form>  
 
