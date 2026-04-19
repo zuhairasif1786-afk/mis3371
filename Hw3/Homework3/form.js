@@ -2,6 +2,7 @@
 Program name: form.js
 Author: Zuhair Asif
 Date Created: 03/27/2026
+Updated date: 04/18/26
 Description: External JavaScript for Patient Registration Form HW2
 */
 
