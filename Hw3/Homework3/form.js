@@ -84,7 +84,7 @@ function validateEmail() {
     var value = email.value.trim();
     var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!pattern.test(value)) {
-        return setError("email_error", "Email must be in the format name@domain.tld.");
+        return setError("email_error", "Email must be in the format name@gmail.com.");
     }
     return clearError("email_error");
 }
