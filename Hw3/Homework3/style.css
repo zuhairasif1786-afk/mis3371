@@ -1,0 +1,233 @@
+/*
+Program name: style.css
+Author: Zuhair Asif
+Date created: 02/20/2026
+Date last edited: 03/27/2026
+Version: 1.0
+Description: Stylesheet for MIS3371 Homework 1 - Patient Registration Form
+*/
+
+body {
+    background-color:rgb(77, 188, 224);
+    font-family:Arial;
+    font-size: 15px;
+    margin: 0px;
+    padding:0px;
+    
+    
+}
+p {
+    font-weight: bold;
+    text-decoration:underline;
+}
+h1 { 
+    color:rgb(204, 14, 204);
+    font-size: 26px;
+    text-align: center;
+    
+}
+
+h2 {
+    color: rgba(0, 0, 0, 0.795);
+    padding-bottom: 20px;
+    
+}
+
+h3{
+    color:rgb(122, 122, 16);
+    padding-bottom:4px;
+    padding-top: 20px;
+}
+
+img{
+ width: 100px;
+ height: auto;
+ position: absolute;
+ top: 10px;
+ right: 20px;   
+ mix-blend-mode: multiply;
+ opacity: 0.7;
+}
+
+#banner {
+    background-color: rgb(24, 51, 175);
+    padding:10px 20px;
+    border: 3px solid black;
+    border-radius: 10px;
+    position: relative;
+    color:tan
+
+}
+
+#opening {
+    font-size: 18px;
+    text-align: center;
+}
+
+#date-display {
+    color:#083352;
+    font-size: 20px;
+    text-align: right;
+}
+
+#main-content {
+    width: 90%;
+    margin:20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid gray;   
+   
+}
+
+table{
+    border-collapse:collapse;
+    width: auto;
+    
+}
+
+td{
+    padding:7px 6px;
+    vertical-align: middle;
+    
+   
+}
+tr{
+    font-weight:bold;
+      
+}
+
+#scale_value {
+    color:red;
+    font-size: larger;
+}
+
+
+#footer{
+    background-color:rgba(58, 80, 179, 0.808);
+    padding: 15px;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 10px;
+    
+}
+
+#symptoms{
+    border: 1px solid rgb(0, 0, 0);
+    resize: none;
+    outline:none;
+}
+
+/* --- Buttons---*/
+
+#contact {
+    cursor: pointer;
+    background-color: aqua;
+}
+#contact:hover
+{
+    background-color: blanchedalmond;
+}
+
+#contact:active{
+    color: aquamarine;
+    background-color: black;
+}
+
+
+
+input[type="submit"] {
+    background-color: #0e317cd3;
+    color: rgb(5, 0, 0);
+    font-size:20px;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.15s, 
+                color 0.15s;
+}
+input[type="submit"]:hover
+{
+    background-color: rgba(179, 158, 41, 0.562);
+}
+
+input[type="submit"]:active{
+    color: aquamarine;
+    background-color: black;
+}
+
+
+
+
+input[type="reset"] {
+    background-color: rgb(117, 10, 10);
+    color: rgb(0, 0, 0);
+    font-size:20px;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+input[type="reset"]:hover
+{
+    background-color: rgba(192, 59, 233, 0.938);
+}
+
+input[type="reset"]:active{
+    color: aquamarine;
+    background-color: black;
+}
+
+
+input[type="button"] {
+    background-color: #117a65;
+    color: white;
+    font-size: 20px;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+input[type="button"]:hover {
+    background-color: #1abc9c;
+}
+input[type="button"]:active {
+    background-color: black;
+    color: aquamarine;
+}
+
+
+span {
+    font-weight: normal;
+    font-size: 12px;
+}
+
+
+#review_section {
+    margin-top: 30px;
+    padding: 20px;
+    border: 2px solid #1a5276;
+    border-radius: 6px;
+    background-color: #eaf4fb;
+}
+#review_section td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #aed6f1;
+    font-weight: normal;
+}
+#review_section td:first-child {
+    font-weight: bold;
+    color: #1a5276;
+    width: 220px;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    font-weight: normal;
+    display: block;
+    min-height: 16px;
+    margin-top: 2px;
+}
+
