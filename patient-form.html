@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<!--
+Program name: patient-form.html
+Author: Zuhair Asif
+Date created: 02/20/2026
+Date last edited: 03/24/2026
+Version: 1.0
+Description: Patient Registration Form for MIS3371 Homework 1
+-->
+<html>
+    <Head>
+        <meta charset="UTF-8">
+        <title>We'R'Docs Medical - Patient Registration</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="banner">
+            <h1>We'R'Docs Medical Center</h1>
+            <p id="opening">Your Health, Our Priority</p>
+            <img src="caduceus-black-medical-symbol- (1).png" alt="We'R'Docs Logo" width="70">
+            <div id="date-display"></div>
+    
+        </div>
+       
+        <div id="welcome_message"></div>
+        <div id="new_user_section"></div>
+        <div id="main-content">
+            <h2>Patient Registration Form</h2>
+            <p>Please fill out the form below to register as a patient at We'R'Docs Medical Center.
+                <p></p> Fields marked with * are required.</p>
+            <form action="thankyou.html" id="patientForm">
+                <div>
+                    <h3>Personal Information</h3>
+                    <table>
+                        <tr>
+                            <td> First Name*</td>
+                            <td><input type="text" id="Fname" name="Fname" maxlength="30" size="20"
+                                title="Enter your first name, 1 to 30 letters, apostrophes, or dashes only"
+                                pattern="[A-Za-z'\-]{1,30}" required 
+                                oninput="validateFirstName()" onblur="validateFirstName()">
+                                <span id="Fname_error" class="error"></span></td>
+
+                            <td> Middle Name</td>
+                            <td><input type="text" id="Mname" name="Mname" maxlength="1" size="2" title="Enter one letter for middle initial"
+                                    pattern="[A-Za-z]" oninput="validateMiddleName()" onblur="validateMiddleName()">
+                                    <span id="Mname_error" class="error"></span></td>
+
+                            <td> Last Name*</td>
+                            <td><input type="text" id="Lname" name="Lname" maxlength="30" size="20" title="Enter your last name, 1 to 30 characters"
+                                    pattern= "[A-Za-z'\-]{1,30}" required  oninput="validateLastName()" onblur="validateLastName()">
+                                    <span id="Lname_error" class="error"></span>
+                            </td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <td> Date of Birth*</td>
+                            <td><input type="date" id="dob" name="dob" min="1906-01-01" max="2026-03-27"
+                                title="Enter your date of birth, no future dates allowed" required onblur="validateDOB()" onchange="validateDOB()">
+                                <span id="dob_error" class="error"></span>
+                            </td>
+
+                            <td> Email address* </td>
+                            <td><input type="email" id="email" name="email" size="35" title="Enter email in the format name@domain.tld"
+                                required oninput="validateEmail(); enforceLowercase(this)" onblur="validateEmail()">
+                            <span id="email_error" class="error"></span></td>
+                        </tr>
+                        <tr>
+                            <td> Social Security# *</td>
+                            <td><input type="password" id="ssn" name="ssn" maxlength="9" size="12" placeholder="9 digits"
+                                title="Enter 9 digits only" pattern="\d{9}" required
+                                oninput="validateSSN()" onblur="validateSSN()">
+                                <span id="ssn_error" class="error"></span>
+                            </td>
+
+                            <td> Phone Number </td>
+                            <td><input type="text" id="phone" name="phone" maxlength="12" size="15" placeholder="218-111-2233"
+                                title="Enter phone in format 000-000-0000"
+                                required oninput="validatePhone()" onblur="validatePhone()">
+                                <span id="phone_error" class="error"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <h3>Address Information</h3>
+                    <table>
+                        <tr>
+                            <td> Adress 1*</td>
+                            <td><input type="text" id="address1" name="address1" maxlength="30" size="50" title="Enter address line 1, 2 to 30 characters"
+                                required oninput="validateAddress1()" onblur="validateAddress1()">
+                            <span id="address1_error" class="error"></span></td>
+
+                            <td> Address 2</td>
+                            <td><input type="text" id="address2" name="address2" maxlength="30" size="50" title="Optional. If entered, use 2 to 30 characters"
+                                pattern=".{2,30}" oninput="validateAddress2()" onblur="validateAddress2()">
+                            <span id="address2_error" class="error"></span>
+                            </td>
+                        </tr>
+                    </table>
+                    <table>    
+                        <tr>
+                            <td> City*</td>
+                            <td><input type="text" id="city" name="city" maxlength="30" size="30"  title="Enter city name, 2 to 30 characters"
+                                pattern=".{2,30}" required
+                                oninput="validateCity()" onblur="validateCity()">
+                                <span id="city_error" class="error"></span>
+                            </td>
+                          <td>State*</td>
+                            <td> 
+                                <select id="state" name="state" required onchange="validateState()" onblur="validateState()">
+                                <option value="">Select State</option> 
+                                </select>
+                                
+                                <span id="state_error" class="error"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> Zip Code*</td> 
+                            <td><input type="text" id="zip" name="zip" maxlength="5" size="18" placeholder="12345"
+                                title="Enter 5 digit zip code"
+                                pattern="\d{5}" required
+                                oninput="validateZip()" onblur="validateZip()">
+                                <span id="zip_error" class="error"></span>
+                            </td> 
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <h3>Account Information</h3>
+
+                    <table>
+                        <tr>
+                            <td> Username*</td>
+                            <td><input type="text" id="username" name="username" maxlength="20" size="20"
+                                title="5 to 20 characters, must start with a letter, no spaces, letters numbers underscore and dash only"
+                                pattern="[A-Za-z][A-Za-z0-9_-]{4,19}"
+                                oninput="enforceLowercase(this); validateUsername()" onblur="validateUsername()" required>
+                                <span id="username_error" class="error"></span>
+                            </td>
+
+                            <td> Password*</td>
+                            <td><input type="password" id="password" name="password" maxlength="30" size="20"
+                                title="At least 8 characters with uppercase, lowercase, and number"
+                                pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d!@#%^&*()\-_+=\/><.,`~]{8,30}"
+                                oninput="checkPasswordStrength(); checkPasswordMatch()" onblur="checkPasswordStrength()" required>
+                                <span id="password_error" class="error"></span> 
+                            </td>
+
+                            <td> Confirm Password*</td>
+                            <td><input type="password" id="confirm_password" name="confirm_password" maxlength="30" size="20"
+                                oninput="checkPasswordMatch()" onblur="checkPasswordMatch()" required>
+                                <span id="match_message" class="error"></span></td>
+                        </tr>
+                    </table>
+
+                </div>  
+                <div>
+                    <h3> Have you had any of the following? (check all that apply) </h3>
+                    <table>
+                        <tr>
+                            
+                            <td><input type="checkbox" id="chk1" name="illness" value="chickenpox">
+                            <label for="chk1"> Chicken Pox</label></td>
+
+                            
+                            <td><input type="checkbox" id="chk2" name="illness" value="measles">
+                            <label for="chk2"> Measles</label></td>
+
+                           
+                            <td><input type="checkbox" id="chk3" name="illness" value="covid19">
+                            <label for="chk3"> Covid-19</label></td>
+                        </tr>
+                        <tr>
+                             
+                            <td><input type="checkbox" id="chk4" name="illness" value="smallpox">
+                            <label for="chk4"> Small Pox</label></td>
+
+                            
+                            <td><input type="checkbox" id="chk5" name="illness" value="tetanus">  
+                            <label for="chk5"> Tetanus</label> </td> 
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <h3> Health Questions</h3>
+                    <table>
+                        <tr>
+                            <td id="gender"> Gender</td>
+                            <td><input type="radio" id="male" name="gender" value="male" required>
+                            <label for="male">Male</label></td>
+
+                            <td><input type="radio" id="female" name="gender" value="female" required>
+                            <label for="female">Female</label></td>
+                            
+                            <td><input type="radio" id="other" name="gender" value="other" required>
+                            <label for="other">Other</label></td>
+                            
+                        
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <td> Have you been vaccinated?</td>
+                            <td><input type="radio" id="vaccinated_yes" name="vaccinated" value="yes" required>
+                            <label for="vaccinated_yes">Yes</label></td>
+
+                            <td><input type="radio" id="vaccinated_no" name="vaccinated" value="no" required>
+                            <label for="vaccinated_no">No</label></td>
+                        </tr>
+                    </table>
+                    <table> 
+                        <tr>
+                            <td>Do you have health insurance?</td>
+                            <td><input type="radio" id="insurance_yes" name="insurance" value="yes" required>
+                                <label for="insurance_yes">Yes</label></td>
+
+                            <td><input type="radio" id="insurance_no" name="insurance" value="no" required>
+                                <label for="insurance_no">No</label></td>
+                        </tr>
+                    </table>    
+                    <table>
+                        <tr>
+                            <td id="question"> <strong>On a scale of 1 to 10, how would you rate your health today?</strong></td>
+                            <td>1 (poor)</td>
+                            <td><input type="range" id="scale" name="scale" min="1" max="10" value="5" required
+                            oninput="updateScale(this.value)"></td>
+                            <td>10 (excellent)</td>
+                            <td><span id="scale_value">5</span></td>
+                        </tr>
+                    </table>
+                </div> 
+                <div>
+                    <h3>Current Symptoms / Reason for Visit</h3>
+                    <table>
+                        <tr>
+                            <td><textarea id="symptoms" name="symptoms" rows="5" cols="50" placeholder="Please describe your current symptoms or reason for visit here..." ></textarea></td>
+                        </tr>
+                        <iframe
+                        src="https://www.w3schools.com"
+                        width="100%"
+                        height="300">
+                    </iframe>
+                    </table>
+                        <tr>
+                            <div>
+                                <input type="button" value="Validate Form" onclick="validateForm()">
+                                <input type="submit" id="submitBtn" value="Submit Registration" style="display:none;">
+                                <input type="button" value="Review" onclick="showReview()">
+                                <input type="reset" value="Reset Form" onclick="clearReview()">
+                                <span id="form_message" class="error"></span>  
+                            </div> 
+                        </tr>
+                        <tr>
+                        <input type="checkbox" id="remember_me" name="remember_me">
+                        <label for="remember_me">Remember my information</label>
+                        </tr>
+                    
+                </div>
+          
+            </form>  
+
+            <div id="review_section" style="display:none; margin-top:30px;">   </div> 
+
+
+                <!-- FOOTER -->
+                <div id="footer">
+                    <p><strong>We'R'Docs Medical Center</strong>; PO Box 18881, Sugar Land, TX 77496</p>
+                    <button id="contact" onclick="alert('Contact us at: info@werdocs.com')">Contact Us</button>
+                </div>
+            <!-- end footer -->
+            
+        </div>
+    <script src="form.js"></script>
+    </body>
+    
+</html>
+            <!-- end of patient-form.html -->
+
+                    
+            
